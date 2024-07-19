@@ -10,5 +10,5 @@
       api_host: 194.26.17.202
       node: test-pve
       clone: "{{ template_vmname }}" 
-      name: "{{ template_vmname }} {{ now(utc=true,fmt='%Y%d%m%H%M%S') }}"
+      name: "{{ template_vmname }}{{ now(utc=true,fmt='%Y%d%m%H%M%S') }}"
       pool: test
