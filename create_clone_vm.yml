@@ -2,14 +2,6 @@
   become: false
   gather_facts: false
   tasks:
-  - name: Ansible fact - ansible_date_time
-    debug:
-      var: ansible_date_time
-
-  - name: Ansible fact - ansible_date_time.iso8601
-    debug:
-      msg: "Timestamp in the ISO8601 format: {{ ansible_date_time.iso8601_basic }}"
-
   - name: Clone VM with only source VM name.
     community.general.proxmox_kvm:
       api_user: ansible@pam
@@ -18,5 +10,5 @@
       api_host: 194.26.17.202
       node: test-pve
       clone: "{{ template_vmname }}" 
-      name: "{{ template_vmname }}_0"
+      name: "{{ template_vmname }}_{{ now(utc=true,fmt='%Y%d%m%H%M%S') }}"
       pool: test
