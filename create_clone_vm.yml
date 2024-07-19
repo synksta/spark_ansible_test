@@ -10,5 +10,5 @@
       api_host: 194.26.17.202
       node: test-pve
       clone: "{{ template_vmname }}" 
-      name: "{{ template_vmname + "_" + ansible_date_time.epoch | int | to_datetime | strftime('%d%m%Y%H%M%S') }}"
+      name: "{{ template_vmname }}_{{ ansible_date_time.epoch | int | to_datetime | strftime('%d%m%Y%H%M%S') }}"
       pool: test
