@@ -12,4 +12,3 @@
       clone: "{{ template_vmname }}" 
       name: "{{ vmname }}"
       pool: test
-      timeout: 500
