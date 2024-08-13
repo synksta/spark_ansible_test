@@ -10,5 +10,5 @@
       api_host: 194.26.17.202
       node: test-pve
       pool: test
-      vmid: {{ vmid }}
+      vmid: "{{ vmid }}"
       state: started
