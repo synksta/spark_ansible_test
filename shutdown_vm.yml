@@ -3,7 +3,7 @@
   gather_facts: false
   tasks:
   - name: Convert container to template
-    community.general.proxmox:
+    community.general.proxmox_kvm:
       api_user: ansible@pam
       api_token_id: ansible-token
       api_token_secret: 9ca17a0c-48b9-4112-8aa0-cafdecaf9d91
