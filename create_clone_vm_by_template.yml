@@ -20,11 +20,8 @@
       api_token_secret: 9ca17a0c-48b9-4112-8aa0-cafdecaf9d91
       api_host: 194.26.17.202
       node: test-pve
-      newid: "{{ newid }}"
       clone: "{{ template_name }}" 
-      full: true
       name: "{{ new_vm_prefix }}-test"
-      state: present
     register: clone_output
   - name: Display the new VM ID
     debug:
