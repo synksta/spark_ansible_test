@@ -1,0 +1,16 @@
+- hosts: proxmox
+  become: false
+  gather_facts: false
+  tasks:
+  - name: Forward test-pve port to VM ip
+    ansible.builtin.iptables:
+      table: nat
+      chain: PREROUTING
+      in_interface: eth0
+      protocol: tcp
+      match: tcp
+      destination_port: "{ dport }"
+      to_destination: "{ vmip }"
+      jump: REDIRECT
+      comment: Redirect web traffic to port 8600
+    become: yes
