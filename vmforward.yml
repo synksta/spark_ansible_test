@@ -6,7 +6,9 @@
     ansible.builtin.iptables:
       table: nat
       chain: PREROUTING
-      in_interface: eth0
       protocol: tcp
-      to_destination: "{{ vmip }}:{{ vmport }} --dport {{ dport }} -j DNAT"
+      match: tcp
+      destination_port: "{{ dport }}"
+      jump: DNAT
+      to_destination: "{{ vmip }}:{{ vmport }}"
     become: yes
