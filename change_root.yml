@@ -16,5 +16,5 @@
     script: "/home/some-scripts/ssh-changer.sh"
     enviroment:
       VM_IP: "{{ vm_ip }}"
-      USERNAME: "{{ login }}"
-      PASSWORD: "{{ password }}"
+      USER: "{{ login }}"
+      PASS: "{{ password }}"
