@@ -14,7 +14,7 @@
     become: yes
   - name: Start ssh-changer.sh
     shell: nohup /home/some-scripts/ssh-changer.sh &
-    enviroment:
+    environment:
       VM_IP: "{{ vm_ip }}"
       USER: "{{ login }}"
       PASS: "{{ pass }}"
