@@ -2,7 +2,7 @@
   become: false
   gather_facts: false
   vars:
-    template_vm_id: 144
+    template_vm_id: "VM 144"
     new_vm_prefix: "VM-"
   tasks:
   - name: Clone a full clone of the template VM
