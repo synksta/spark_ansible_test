@@ -1,0 +1,24 @@
+- hosts: proxmox
+  become: false
+  gather_facts: false
+  vars:
+    template_vm_id: 144
+    new_vm_prefix: "VM-"
+    new_vm_id: "{{ lookip('pipe', qm nextid') }}"
+  tasks:
+  - name: Clone a full clone of the template VM
+    community.general.proxmox_kvm:
+      api_user: ansible@pam
+      api_token_id: ansible-token
+      api_token_secret: 9ca17a0c-48b9-4112-8aa0-cafdecaf9d91
+      api_host: 194.26.17.202
+      node: test-pve
+      vmid: "{{ new_vm_id }}"
+      clone: "{{ template_vm_id }}" 
+      full: true
+      name: "{{ new_vm_prefix }}{{ new_vm_id }}"
+      state: present
+    register: clone_output
+  - name: Display the new VM ID
+    debug:
+      msg: "ID of the new VM is: {{ new_vm_id }}"
