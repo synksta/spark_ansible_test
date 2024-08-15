@@ -1,8 +1,7 @@
 - hosts: proxmox
   become: false
   gather_facts: false
-  vars:
-    template_vm_id: "VM 144"
+  vars: 
     new_vm_prefix: "VM-"
   tasks:
   - name: Clone a full clone of the template VM
@@ -12,7 +11,7 @@
       api_token_secret: 9ca17a0c-48b9-4112-8aa0-cafdecaf9d91
       api_host: 194.26.17.202
       node: test-pve
-      clone: "{{ template_vm_id }}" 
+      clone: "{{ template_name }}" 
       full: true
       name: "{{ new_vm_prefix }}-test"
       state: present
