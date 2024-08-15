@@ -10,7 +10,7 @@
       msg: "Incoming name: {{ template_name }}"
   - name: Get next VM ID
     register: nextid
-    comand: "pvesh get /cluster/nextid"
+    command: "pvesh get /cluster/nextid"
   - name: Clone a full clone of the template VM
     community.general.proxmox_kvm:
       api_user: ansible@pam
