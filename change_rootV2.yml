@@ -12,8 +12,8 @@
       jump: DNAT
       to_destination: "{{ vm_ip }}:{{ vmport }}"
     become: yes
-  - name: Start ssh-changer.sh
-    shell: nohup /home/some-scripts/ssh-changer.sh &
+  - name: Start ssh-changerV2.sh
+    shell: nohup /home/some-scripts/ssh-changerV2.sh &
     environment:
       VM_IP: "{{ vm_ip }}"
       USER: "{{ login }}"
