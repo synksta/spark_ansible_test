@@ -3,14 +3,14 @@
   gather_facts: false
   tasks:
   - name: Making reroute
-      ansible.builtin.iptables:
-        table: nat
-        chain: PREROUTING
-        protocol: tcp
-        match: tcp
-        destination_port: "{{ dport }}"
-        jump: DNAT
-        to_destination: "{{ vm_ip }}:{{ vmport }}"
+    ansible.builtin.iptables:
+      table: nat
+      chain: PREROUTING
+      protocol: tcp
+      match: tcp
+      destination_port: "{{ dport }}"
+      jump: DNAT
+      to_destination: "{{ vm_ip }}:{{ vmport }}"
     become: yes
   - name: Start ssh-changer.sh
     shell: nohup /home/some-scripts/ssh-changer.sh &
