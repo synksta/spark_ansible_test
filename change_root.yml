@@ -17,6 +17,6 @@
     enviroment:
       VM_IP: "{{ vm_ip }}"
       USER: "{{ login }}"
-      PASS: "{{ password }}"
+      PASS: "{{ pass }}"
     async: 0
     poll: 0
