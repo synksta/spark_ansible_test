@@ -4,7 +4,7 @@
   vars:
     template_vm_id: 144
     new_vm_prefix: "VM-"
-    new_vm_id: "{{ lookup('pipe', qm nextid') }}"
+    new_vm_id: "{{ lookup('pipe', 'qm nextid') }}"
   tasks:
   - name: Clone a full clone of the template VM
     community.general.proxmox_kvm:
