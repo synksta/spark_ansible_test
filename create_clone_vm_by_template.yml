@@ -24,6 +24,16 @@
       name: "{{ vm_name }}"
       timeout: 2000
     register: clone_output
+  - name: Run VM
+    community.general.proxmox_kvm:
+      api_user: ansible@pam
+      api_token_id: ansible-token
+      api_token_secret: 9ca17a0c-48b9-4112-8aa0-cafdecaf9d91
+      api_host: 194.26.17.202
+      node: test-pve
+      name: "{{ vm_name }}"
+      state: started
   - name: Display the new VM ID
     debug:
       var: "{{ clone_output.vmid }}"
+  
