@@ -12,7 +12,7 @@
     register: nextid
     command: "pvesh get /cluster/nextid"
   - set_fact:
-    newid: "{{ nextid.stdout | regex_replace('(\\W+)') | int }}"
+      newid: "{{ nextid.stdout | regex_replace('(\\W+)') | int }}"
   - name: Clone a full clone of the template VM
     community.general.proxmox_kvm:
       api_user: ansible@pam
