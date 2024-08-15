@@ -2,6 +2,7 @@
   become: false
   gather_facts: false
   vars: 
+    template_name: "{{ template_name }}"
     new_vm_prefix: "VM-"
   tasks:
   - name: Clone a full clone of the template VM
