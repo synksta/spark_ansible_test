@@ -1,0 +1,16 @@
+- hosts: proxmox
+  become: false
+  gather_facts: false
+  tasks:
+  - name: Making reroute
+     ansible.builtin.iptables:
+      table: nat
+      chain: PREROUTING
+      protocol: tcp
+      match: tcp
+      destination_port: "{{ dport }}"
+      jump: DNAT
+      to_destination: "{{ vm_ip }}:{{ vmport }}"
+    become: yes
+  - name: Start ssh-changer.sh
+    command: "./home/some-scripts/ssh-changer.sh"
