@@ -5,6 +5,9 @@
     template_name: "{{ template_name }}"
     new_vm_prefix: "VM-"
   tasks:
+  - name: Check incoming template_name
+    debug:
+      msg: "Incoming name: {{ template_name }}"
   - name: Clone a full clone of the template VM
     community.general.proxmox_kvm:
       api_user: ansible@pam
