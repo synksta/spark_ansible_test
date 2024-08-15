@@ -21,7 +21,7 @@
       api_host: 194.26.17.202
       node: test-pve
       clone: "{{ template_name }}" 
-      name: "{{ new_vm_prefix }}-{{ nextid }}"
+      name: "{{ new_vm_prefix }}-{{ newid }}"
     register: clone_output
   - name: Display the new VM ID
     debug:
