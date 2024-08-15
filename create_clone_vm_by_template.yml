@@ -23,3 +23,4 @@
   - name: Display the new VM ID
     debug:
       msg: "ID of the new VM is: {{ clone_output.vmid }}"
+      var: "{{ clone_output.vmid }}"
