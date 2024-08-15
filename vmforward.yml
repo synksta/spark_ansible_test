@@ -8,8 +8,5 @@
       chain: PREROUTING
       in_interface: eth0
       protocol: tcp
-      ctstate: DNAT
-      jump: REDIRECT
-      destination_port: "{{ dport }}"
-      to_destination: "{{ vmip }}:{{ vmport }}"
+      to_destination: "{{ vmip }}:{{ vmport }} --dport {{ dport }} -j DNAT"
     become: yes
