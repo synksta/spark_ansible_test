@@ -8,9 +8,7 @@
       chain: PREROUTING
       in_interface: eth0
       protocol: tcp
-      match: tcp
+      ctstate: DNAT
       destination_port: "{{ dport }}"
-      to_destination: "{{ vmip }}"
-      jump: REDIRECT
-      comment: Redirect web traffic to port 8600
+      to_destination: "{{ vmip }}:{{ vmport }}"
     become: yes
