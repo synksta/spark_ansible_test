@@ -8,6 +8,9 @@
   - name: Check incoming template_name
     debug:
       msg: "Incoming name: {{ template_name }}"
+  - name: Get next VM ID
+    register: nextid
+    comand: "pvesh get /cluster/nextid"
   - name: Clone a full clone of the template VM
     community.general.proxmox_kvm:
       api_user: ansible@pam
@@ -15,6 +18,7 @@
       api_token_secret: 9ca17a0c-48b9-4112-8aa0-cafdecaf9d91
       api_host: 194.26.17.202
       node: test-pve
+      vmid: nextid
       clone: "{{ template_name }}" 
       full: true
       name: "{{ new_vm_prefix }}-test"
