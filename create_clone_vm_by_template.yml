@@ -22,6 +22,7 @@
       node: test-pve
       clone: "{{ template_name }}" 
       name: "{{ new_vm_prefix }}{{ newid }}"
+      timeout: 2000
     register: clone_output
   - name: Display the new VM ID
     debug:
