@@ -9,6 +9,7 @@
       in_interface: eth0
       protocol: tcp
       ctstate: DNAT
+      jump: REDIRECT
       destination_port: "{{ dport }}"
       to_destination: "{{ vmip }}:{{ vmport }}"
     become: yes
