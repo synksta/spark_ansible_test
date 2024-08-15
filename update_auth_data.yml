@@ -12,4 +12,5 @@
       vmid: "{{ vmid }}"
       ciuser: "{{ un }}"
       cipassword: "{{ pw }}"
+      update: true
       pool: test
