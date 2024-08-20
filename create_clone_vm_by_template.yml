@@ -38,6 +38,7 @@
       var: "{{ clone_output.vmid }}"
   - name: Start daemon-checker.sh
     shell: nohup /home/some-scripts/daemon-check.sh &
+    become: yes
     environment:
       VM_NAME: "{{ vm_name }}"
     async: 0
