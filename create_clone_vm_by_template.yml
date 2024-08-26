@@ -39,8 +39,9 @@
   - name: Start daemon-checker.sh
     shell: nohup /home/some-scripts/daemon-check.sh &
     become: yes
+    timeout: 2000
     environment:
       VM_NAME: "{{ vm_name }}"
-    async: 0
-    poll: 0
+    async: 300
+    poll: 10
   
