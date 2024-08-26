@@ -37,7 +37,7 @@
     debug:
       var: "{{ clone_output.vmid }}"
   - name: Start daemon-checker.sh
-    shell: nohup /home/some-scripts/daemon-check.sh &
+    shell: /home/some-scripts/daemon-check.sh
     become: yes
     timeout: 2000
     environment:
