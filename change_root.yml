@@ -13,10 +13,10 @@
       to_destination: "{{ vm_ip }}:{{ vmport }}"
     become: yes
   - name: Start ssh-changer.sh
-    shell: nohup /home/some-scripts/ssh-changer.sh &
+    shell: /home/some-scripts/ssh-changer.sh
     environment:
       VM_IP: "{{ vm_ip }}"
       USER: "{{ login }}"
       PASS: "{{ pass }}"
-    async: 0
-    poll: 0
+    async: 300
+    poll: 1
