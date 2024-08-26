@@ -42,6 +42,6 @@
     timeout: 2000
     environment:
       VM_NAME: "{{ vm_name }}"
-    async: 300
-    poll: 10
+    async: 0
+    poll: 0
   
